@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>My Barns — BARNS</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Libre+Franklin:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="feature-pages.css">
+  <link rel="stylesheet" href="citrus6-theme.css">
+  <link rel="stylesheet" href="my-barns.css">
+</head>
+<body class="my-barns-page">
+  <aside class="barn-library-nav">
+    <a class="library-brand" href="app.html"><span>B</span><b>BARNS</b></a>
+    <nav aria-label="Barn navigation">
+      <a href="app.html">⌂ Barnyard</a>
+      <a class="active" href="my-barns.html">◫ My Barns</a>
+      <a href="check-in.html">✓ Daily Check-in</a>
+      <a href="capacity-gap.html">↗ Capacity Gap</a>
+      <a href="open-barn.html">＋ Open a Barn</a>
+    </nav>
+    <p>Choose a Barn, then choose the specific capacity inside it that you want to build.</p>
+  </aside>
+
+  <main class="barn-library-main">
+    <header class="library-header">
+      <div><p class="eyebrow">YOUR CAPACITY LIBRARY</p><h1>My Barns</h1><p>Thirteen areas of capacity. Each contains focused sub-Barns you can intentionally strengthen.</p></div>
+      <div class="library-summary"><strong>13</strong><span>BARNS</span><b>91 sub-Barns</b></div>
+    </header>
+
+    <section class="library-toolbar" aria-label="Filter Barns">
+      <label><span>Find a Barn or sub-Barn</span><input id="barnSearch" type="search" placeholder="Search prayer, leadership, budgeting…"></label>
+      <div><button class="filter active" data-filter="all">All Barns</button><button class="filter" data-filter="focus">My focus</button></div>
+    </section>
+
+    <section class="barn-library-grid" id="barnLibraryGrid" aria-live="polite"></section>
+  </main>
+
+  <dialog id="subBarnDialog" class="sub-barn-dialog">
+    <div class="sub-barn-shell">
+      <header><div><p class="eyebrow">BUILD WITHIN THIS BARN</p><h2 id="libraryBarnTitle">Spirit Barn</h2><p id="libraryBarnDescription"></p></div><button id="closeSubBarn" aria-label="Close Barn">×</button></header>
+      <div class="sub-barn-list" id="subBarnList"></div>
+      <section class="focus-builder" id="focusBuilder" hidden>
+        <p class="eyebrow">SELECTED SUB-BARN</p><h3 id="focusTitle"></h3><p id="focusPractice"></p>
+        <button id="activateFocus">Build this sub-Barn →</button>
+      </section>
+    </div>
+  </dialog>
+
+  <div class="library-toast" id="libraryToast" role="status" aria-live="polite"></div>
+  <script src="barn-paths.js"></script>
+  <script src="my-barns.js"></script>
+</body>
+</html>
