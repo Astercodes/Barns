@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="theme.css" />
     <link rel="stylesheet" href="flows.css" />
     <link rel="stylesheet" href="barn-operating-system.css" />
-  </head>
+  <link rel="stylesheet" href="citrus6-theme.css"><link rel="stylesheet" href="barn-paths.css"></head>
   <body class="dashboard-page">
     <div class="shell">
       <aside class="sidebar">
@@ -167,6 +167,7 @@
         <div class="barn-detail-grid">
           <section class="capacity-index"><div class="index-ring" id="indexRing"><span id="detailScore">78</span><small>CAPACITY<br>INDEX</small></div><div><p class="eyebrow">THE BARN SCORE</p><h3>Evidence, not a vanity percentage.</h3><p>Seven indicators show what this Barn can reliably carry.</p></div></section>
           <section class="indicator-panel"><div class="indicator-head"><h3>Capacity indicators</h3><span>7 dimensions</span></div><div id="indicatorBars"></div></section>
+          <section class="subcategory-panel"><div class="subcategory-heading"><div><p class="eyebrow">BUILD WITHIN THIS BARN</p><h3>Choose a capacity to strengthen</h3></div><span id="subcategoryCount">0 paths</span></div><p>Select one focused path. BARNS will turn it into an active development focus with truth, practice, and evidence of growth.</p><div class="subcategory-grid" id="subcategoryGrid"></div><div class="selected-focus" id="selectedFocus" hidden><div><small>SELECTED BUILD FOCUS</small><strong id="selectedFocusName"></strong><p id="selectedFocusPractice"></p></div><button id="buildSubcategory" type="button">Build this focus →</button></div></section>
           <section class="level-panel"><div class="level-heading"><div><p class="eyebrow">LEVELS OF THIS BARN</p><h3 id="currentLevelName">Level 5 — Stability</h3></div><span id="currentLevelBadge">5 / 7</span></div><div class="level-track" id="levelTrack"></div><blockquote>“The highest level of capacity is not only that I can do it—but that I can reproduce it.”</blockquote></section>
         </div>
       </div>
@@ -201,7 +202,7 @@
     <div class="toast" role="status" aria-live="polite">Your focus has been set: protect 60 minutes for the work that carries your mission.</div>
     <script src="app.js"></script>
     <script src="flows.js"></script>
+    <script src="barn-paths.js"></script>
     <script src="barn-operating-system.js"></script>
   </body>
 </html>
-
