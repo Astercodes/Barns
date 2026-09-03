@@ -1,6 +1,6 @@
 import { readFileSync, statSync } from "node:fs";
 
-const files = ["out/index.html", "out/styles.css", "out/app.js"];
+const files = ["out/index.html", "out/styles.css", "out/charts.css", "out/app.js"];
 for (const file of files) {
   if (!statSync(file).isFile()) throw new Error(`Missing ${file}`);
 }
