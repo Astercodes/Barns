@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="charts.css" />
     <link rel="stylesheet" href="theme.css" />
     <link rel="stylesheet" href="flows.css" />
+    <link rel="stylesheet" href="barn-operating-system.css" />
   </head>
   <body class="dashboard-page">
     <div class="shell">
@@ -112,6 +113,7 @@
               <p class="gap-note"><i></i> Your mission is moving <b>1.7× faster</b> than its support system.</p>
             </article>
           </div>
+          <button class="red-flag-strip" id="redFlagsButton" type="button"><span>⚠</span><div><b>3 capacity red flags need attention</b><small>Mission–Discipline mismatch is currently the highest risk.</small></div><i>Review warnings →</i></button>
         </section>
 
         <section class="content-grid" id="landscape">
@@ -159,6 +161,21 @@
       </form>
     </dialog>
 
+    <dialog id="barnDetailDialog" class="barn-detail-dialog">
+      <div class="barn-detail-shell">
+        <header class="barn-detail-head"><div><p class="eyebrow">BARN CAPACITY PROFILE</p><h2><span id="detailIcon">✦</span> <span id="detailName">Spirit</span> Barn</h2><p id="detailSummary">Your practices are becoming resilient.</p></div><button id="closeBarnDetail" aria-label="Close Barn details">×</button></header>
+        <div class="barn-detail-grid">
+          <section class="capacity-index"><div class="index-ring" id="indexRing"><span id="detailScore">78</span><small>CAPACITY<br>INDEX</small></div><div><p class="eyebrow">THE BARN SCORE</p><h3>Evidence, not a vanity percentage.</h3><p>Seven indicators show what this Barn can reliably carry.</p></div></section>
+          <section class="indicator-panel"><div class="indicator-head"><h3>Capacity indicators</h3><span>7 dimensions</span></div><div id="indicatorBars"></div></section>
+          <section class="level-panel"><div class="level-heading"><div><p class="eyebrow">LEVELS OF THIS BARN</p><h3 id="currentLevelName">Level 5 — Stability</h3></div><span id="currentLevelBadge">5 / 7</span></div><div class="level-track" id="levelTrack"></div><blockquote>“The highest level of capacity is not only that I can do it—but that I can reproduce it.”</blockquote></section>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="redFlagsDialog" class="red-flags-dialog">
+      <div class="flags-shell"><header><div><p class="eyebrow">CAPACITY INTELLIGENCE</p><h2>Red Flags</h2><p>Patterns that could make increase difficult to sustain.</p></div><button id="closeRedFlags" aria-label="Close red flags">×</button></header><div id="redFlagsList"></div></div>
+    </dialog>
+
     <dialog id="gapDialog" class="flow-dialog compact-dialog">
       <form method="dialog" id="gapForm">
         <div class="dialog-head"><div><p class="eyebrow">THE CAPACITY GAP</p><h2>What are you expecting?</h2><p>Make the promise measurable. Make the preparation practical.</p></div><button class="close-dialog" value="cancel" aria-label="Close">×</button></div>
@@ -184,6 +201,7 @@
     <div class="toast" role="status" aria-live="polite">Your focus has been set: protect 60 minutes for the work that carries your mission.</div>
     <script src="app.js"></script>
     <script src="flows.js"></script>
+    <script src="barn-operating-system.js"></script>
   </body>
 </html>
 
