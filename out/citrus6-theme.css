@@ -4,3 +4,26 @@ body{background:#effaff;color:#04152f}
 .sidebar{background:#04152f}.nav-item{color:#b9e8ff}.nav-item:hover,.nav-item.active{background:#0a4fa3;color:#fff}.sidebar small{color:#9edcff}.profile>span{background:#149bff;color:#fff}.topbar{background:#fff;border-color:#b9e8ff}.diagnosis{background:linear-gradient(120deg,#04152f,#0a4fa3);border-left:5px solid #e91b2d}.diagnosis-icon{background:#149bff;color:#fff}.insight-label{color:#39c6ff}.diagnosis p{color:#ddf5ff}.diagnosis button{background:#fff;color:#0a4fa3}.barns-panel,.smallest-card,.rhythm-card{background:#fff;border-color:#b9e8ff}.legend i.up{background:#149bff}.legend i.down,.bell span{background:#e91b2d}.barn{background:#effaff}.barn:hover,.barn:focus{border-color:#149bff;box-shadow:0 6px 15px #149bff1f}.barn.alert,.smallest-card{background:#fff3f5;border-color:#ffc3ca}.barn-icon{background:#ddf5ff;color:#0a4fa3}.barn:nth-child(4n+2) .barn-icon{background:#e91b2d;color:#fff}.barn:nth-child(4n+3) .barn-icon{background:#149bff;color:#fff}.barn:nth-child(4n) .barn-icon{background:#071f4a;color:#fff}.barn.alert .barn-icon{background:#e91b2d;color:#fff}.barn .trend{color:#0a4fa3}.barn .trend.down,.score-row span{color:#e91b2d}.barn.enlargement{background:linear-gradient(100deg,#04152f,#0a4fa3);border-left:5px solid #e91b2d}.enlargement .barn-icon{background:#39c6ff;color:#04152f}.pill{background:#e91b2d;color:#fff}.bar{background:#ddf5ff}.bar i{background:#e91b2d}.smallest-card button,.task input:checked+.checkmark{background:#0a4fa3;border-color:#0a4fa3}.toast{background:#04152f}
 .donut{background:conic-gradient(#e91b2d 0 16%,#149bff 16% 47%,#39c6ff 47% 73%,#0a4fa3 73% 91%,#ddf5ff 91% 100%)!important}.chart-bar,.bar-fill,.progress-fill{background:linear-gradient(90deg,#0a4fa3,#149bff,#39c6ff)!important}.warning,.alert-card,.red-flag{border-color:#e91b2d!important;background:#fff3f5!important}.primary,.primary-button,.submit-btn,button[type=submit]{background:#e91b2d!important;color:#fff!important;border-color:#e91b2d!important}.feature-shell,.page-shell,.feature-main,main{background-color:#effaff}.card,.panel,.feature-card,form{background-color:#fff}.sidebar{overflow-y:auto;overscroll-behavior:contain}
 @media(max-width:900px){.hero{background:linear-gradient(160deg,#fff 0 55%,#ddf5ff 55%)}}
+
+
+/* Motion system — energetic, polished, and limited to the BARNS palette. */
+@keyframes barns-rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes barns-pop{0%{opacity:0;transform:scale(.94)}70%{transform:scale(1.025)}100%{opacity:1;transform:scale(1)}}
+@keyframes barns-orbit{50%{transform:translateY(-12px) rotate(2deg)}}
+@keyframes barns-glow{50%{box-shadow:0 22px 54px #149bff38}}
+@keyframes barns-pulse{50%{transform:scale(1.06);filter:saturate(1.15)}}
+@keyframes barns-fill{from{background-size:0 100%}to{background-size:100% 100%}}
+body{animation:barns-rise .55s cubic-bezier(.2,.75,.25,1) both}
+.hero-copy>*{animation:barns-rise .65s cubic-bezier(.2,.75,.25,1) both}.hero-copy>*:nth-child(2){animation-delay:.08s}.hero-copy>*:nth-child(3){animation-delay:.16s}.hero-copy>*:nth-child(4){animation-delay:.24s}
+.capacity-card{animation:barns-pop .8s .18s cubic-bezier(.2,.8,.25,1) both,barns-glow 5s 1.2s ease-in-out infinite}
+.arch-a{animation:barns-orbit 7s ease-in-out infinite}.arch-b{animation:barns-orbit 5.5s .4s ease-in-out infinite reverse}.red-orb{animation:barns-pulse 3.2s ease-in-out infinite}
+.landing-barn,.barn,.feature-card,.report-card,.steps article,.method-grid article,.constraint-grid article{transition:transform .28s cubic-bezier(.2,.75,.25,1),box-shadow .28s ease,border-color .28s ease}
+.landing-barn,.barn,.chart-card,.diagnosis,.smallest-card,.rhythm-card,.feature-card,.report-card{animation:barns-rise .58s cubic-bezier(.2,.75,.25,1) both}
+.landing-barn:nth-child(3n+2),.barn:nth-child(3n+2){animation-delay:.07s}.landing-barn:nth-child(3n),.barn:nth-child(3n){animation-delay:.14s}
+.landing-barn:hover,.barn:hover,.feature-card:hover,.report-card:hover,.steps article:hover,.method-grid article:hover,.constraint-grid article:hover{transform:translateY(-6px);box-shadow:0 18px 42px #0a4fa322}
+.donut,.overall-ring,.score-ring,.index-ring{transition:transform .35s ease,filter .35s ease}.donut:hover,.overall-ring:hover,.score-ring:hover,.index-ring:hover{transform:rotate(4deg) scale(1.035);filter:saturate(1.12)}
+.chart-bar,.bar-fill,.progress-fill,.mini-bars i{background-repeat:no-repeat;animation:barns-fill 1.05s .25s cubic-bezier(.2,.75,.25,1) both}
+.button,.feature-submit,.diagnosis button,.smallest-card button{transition:transform .22s ease,box-shadow .22s ease,filter .22s ease}
+.button:hover,.feature-submit:hover,.diagnosis button:hover,.smallest-card button:hover{transform:translateY(-3px);box-shadow:0 12px 28px #04152f24;filter:saturate(1.08)}
+.button:active,.feature-submit:active,.diagnosis button:active,.smallest-card button:active{transform:translateY(0) scale(.98)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
