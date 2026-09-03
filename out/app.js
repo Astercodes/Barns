@@ -29,6 +29,11 @@ document.querySelector('#focusButton').addEventListener('click',()=>showToast('T
 document.querySelector('#strengthenButton').addEventListener('click',()=>{document.querySelector('#today').scrollIntoView({behavior:'smooth'});showToast('Time Barn focus added to today’s rhythm.');});
 document.querySelector('.menu').addEventListener('click',()=>document.querySelector('.sidebar').classList.toggle('open'));
 document.addEventListener('click',e=>{if(innerWidth<760&&!e.target.closest('.sidebar')&&!e.target.closest('.menu'))document.querySelector('.sidebar').classList.remove('open')});
+document.querySelectorAll('.period-switch button').forEach(button=>button.addEventListener('click',()=>{
+  document.querySelectorAll('.period-switch button').forEach(item=>item.classList.remove('selected'));
+  button.classList.add('selected');
+  showToast(`${button.textContent} capacity view selected.`);
+}));
 
 // Expose BARNS' primary action to browsers that support the WebMCP proposal.
 const context=document.modelContext;
