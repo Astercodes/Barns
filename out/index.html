@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#12372b" />
+    <meta name="description" content="A daily personal enlargement and stewardship system." />
+    <title>BARNS — Your Capacity Landscape</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Franklin:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="BARNS home"><span class="brand-mark">B</span><span>BARNS</span></a>
+        <nav aria-label="Main navigation">
+          <a class="nav-item active" href="#"><span>⌂</span> Barnyard</a>
+          <a class="nav-item" href="#landscape"><span>◫</span> My Barns</a>
+          <a class="nav-item" href="#today"><span>✓</span> Daily Rhythm</a>
+          <a class="nav-item" href="#insight"><span>↗</span> Insights</a>
+        </nav>
+        <div class="sidebar-foot">
+          <div class="streak"><span class="flame">◆</span><div><strong>12 day streak</strong><small>Keep enlarging</small></div></div>
+          <button class="profile"><span>AO</span><div><strong>Ayomide</strong><small>Steward</small></div><b>•••</b></button>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <button class="menu" aria-label="Open navigation">☰</button>
+          <div class="date">MONDAY <i></i> SEPTEMBER 2</div>
+          <button class="bell" aria-label="Notifications">♢<span></span></button>
+        </header>
+
+        <section class="welcome">
+          <div>
+            <p class="eyebrow">YOUR CAPACITY LANDSCAPE</p>
+            <h1>Good morning, Ayomide.</h1>
+            <p class="scripture">“Enlarge the place of thy tent, and let them stretch forth the curtains of thine habitations.” <span>— Isaiah 54:2</span></p>
+          </div>
+          <div class="readiness" aria-label="Overall readiness 61 percent">
+            <svg viewBox="0 0 120 120" role="img"><circle cx="60" cy="60" r="52"/><circle class="meter" cx="60" cy="60" r="52"/></svg>
+            <div><strong>61<span>%</span></strong><small>READINESS</small></div>
+          </div>
+        </section>
+
+        <section class="diagnosis" id="insight">
+          <div class="diagnosis-icon">✦</div>
+          <div class="diagnosis-copy">
+            <span class="insight-label">CAPACITY INSIGHT</span>
+            <h2>Your vision is outgrowing your systems.</h2>
+            <p>Your <b>Mission Barn</b> is expanding faster than your <b>Time</b> and <b>Work Barns</b>. Strengthen your execution capacity before taking on additional commitments.</p>
+          </div>
+          <button id="focusButton">Build today’s focus <span>→</span></button>
+        </section>
+
+        <section class="content-grid" id="landscape">
+          <div class="barns-panel">
+            <div class="section-head">
+              <div><p class="eyebrow">THE BARNYARD</p><h2>Your 13 Barns</h2></div>
+              <div class="legend"><span><i class="up"></i>Expanding</span><span><i></i>Stable</span><span><i class="down"></i>Contracting</span></div>
+            </div>
+            <div class="barn-grid" id="barnGrid"></div>
+          </div>
+
+          <aside class="right-column" id="today">
+            <div class="smallest-card">
+              <div class="card-top"><span class="hourglass">⌛</span><span class="pill">SMALLEST BARN</span></div>
+              <p>THIS WEEK</p>
+              <h2>Time</h2>
+              <div class="score-row"><strong>39%</strong><span>↓ 6% from last week</span></div>
+              <div class="bar"><i></i></div>
+              <blockquote>“What you make room for reveals what you are preparing to carry.”</blockquote>
+              <button id="strengthenButton">Strengthen this barn <span>→</span></button>
+            </div>
+
+            <div class="rhythm-card">
+              <div class="section-head"><div><p class="eyebrow">DAILY RHYTHM</p><h2>Today’s enlargements</h2></div><span id="taskCount">1 / 3</span></div>
+              <label class="task done"><input type="checkbox" checked><span class="checkmark"></span><span><b>Protect the first hour</b><small>Time Barn · 45 min</small></span></label>
+              <label class="task"><input type="checkbox"><span class="checkmark"></span><span><b>Document one workflow</b><small>Work Barn · 20 min</small></span></label>
+              <label class="task"><input type="checkbox"><span class="checkmark"></span><span><b>Evening reflection</b><small>Spirit Barn · 10 min</small></span></label>
+            </div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite">Your focus has been set: protect 60 minutes for the work that carries your mission.</div>
+    <script src="app.js"></script>
+  </body>
+</html>
+
