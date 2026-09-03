@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Franklin:wght@600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="charts.css" />
   </head>
   <body>
     <div class="shell">
@@ -54,6 +55,35 @@
             <p>Your <b>Mission Barn</b> is expanding faster than your <b>Time</b> and <b>Work Barns</b>. Strengthen your execution capacity before taking on additional commitments.</p>
           </div>
           <button id="focusButton">Build today’s focus <span>→</span></button>
+        </section>
+
+        <section class="analytics" aria-labelledby="analytics-title">
+          <div class="analytics-head">
+            <div><p class="eyebrow">CAPACITY INTELLIGENCE</p><h2 id="analytics-title">How your containers are changing</h2></div>
+            <div class="period-switch" aria-label="Chart period"><button class="selected">7 days</button><button>30 days</button><button>90 days</button></div>
+          </div>
+          <div class="chart-grid">
+            <article class="chart-card balance-card">
+              <div class="chart-title"><div><span>Capacity balance</span><small>13-Barn distribution</small></div><b>+4.2%</b></div>
+              <div class="donut-wrap">
+                <div class="donut" role="img" aria-label="Foundations 32 percent, stewardship 26 percent, influence 23 percent, wellbeing 19 percent"><div><strong>61%</strong><span>BALANCED</span></div></div>
+                <div class="donut-legend"><span><i class="cyan"></i><b>32%</b> Foundations</span><span><i class="lime"></i><b>26%</b> Stewardship</span><span><i class="pink"></i><b>23%</b> Influence</span><span><i class="orange"></i><b>19%</b> Wellbeing</span></div>
+              </div>
+            </article>
+            <article class="chart-card trajectory-card">
+              <div class="chart-title"><div><span>Readiness trajectory</span><small>Your last seven check-ins</small></div><b class="cyan-text">↑ 8 pts</b></div>
+              <svg class="line-chart" viewBox="0 0 520 190" role="img" aria-label="Readiness rose from 53 to 61 percent this week">
+                <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00c9d8" stop-opacity=".35"/><stop offset="1" stop-color="#00c9d8" stop-opacity="0"/></linearGradient></defs>
+                <g class="grid-lines"><path d="M24 30H505M24 78H505M24 126H505M24 174H505"/></g><path class="area" d="M24 146 C75 142 80 126 104 129 S160 117 184 121 S240 88 264 96 S320 77 344 82 S400 52 424 60 S480 35 505 38 L505 174 L24 174Z"/><path class="line" d="M24 146 C75 142 80 126 104 129 S160 117 184 121 S240 88 264 96 S320 77 344 82 S400 52 424 60 S480 35 505 38"/><g class="points"><circle cx="24" cy="146" r="4"/><circle cx="104" cy="129" r="4"/><circle cx="184" cy="121" r="4"/><circle cx="264" cy="96" r="4"/><circle cx="344" cy="82" r="4"/><circle cx="424" cy="60" r="4"/><circle class="last" cx="505" cy="38" r="6"/></g>
+              </svg>
+              <div class="axis"><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span><span>MON</span></div>
+            </article>
+            <article class="chart-card gap-card">
+              <div class="chart-title"><div><span>Capacity gap</span><small>Vision vs. supporting capacity</small></div><b class="pink-text">20 pt gap</b></div>
+              <div class="gap-chart" role="img" aria-label="Mission 81, Discipline 51, Work 48, Time 39"><div class="gap-row"><span>Mission</span><div><i style="--w:81%;--c:#ff196f"></i></div><b>81</b></div><div class="gap-row"><span>Discipline</span><div><i style="--w:51%;--c:#9bea18"></i></div><b>51</b></div><div class="gap-row"><span>Work</span><div><i style="--w:48%;--c:#00c9d8"></i></div><b>48</b></div><div class="gap-row"><span>Time</span><div><i style="--w:39%;--c:#ff8a00"></i></div><b>39</b></div></div>
+              <p class="gap-note"><i></i> Your mission is moving <b>1.7× faster</b> than its support system.</p>
+            </article>
+          </div>
         </section>
 
         <section class="content-grid" id="landscape">
