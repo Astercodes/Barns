@@ -10,6 +10,9 @@ Standalone systems include the Daily Barn Check-In, Capacity Gap, Open and Put M
 
 Serve the `out` directory with any static web server, then open `index.html` in a browser.
 
+
+The public root is a landing page; the complete capacity system opens at `/app.html`.
+
 ## Deployment
 
 Vercel builds with `npm run build` and publishes the static `out` directory.
