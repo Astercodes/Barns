@@ -1,7 +1,7 @@
 /* BARNS palette: aqua, magenta, orange and lime only, plus neutral ink/white. */
 :root{--ink:#250018;--green:#00bfce;--green2:#ff196f;--mint:#bff9ef;--cream:#effdff;--paper:#fff;--line:#9be9ee;--orange:#ff8500;--pink:#ff0b6d;--cyan:#00bfce;--lime:#91e900;--muted:#67405a}
 body{background:linear-gradient(135deg,#effdff 0%,#fff 44%,#fff3fa 100%);color:var(--ink)}
-.sidebar{background:linear-gradient(180deg,#00bfce 0%,#00a9c2 60%,#ff196f 160%);color:#250018}
+.sidebar{background:linear-gradient(180deg,#00bfce 0%,#00a9c2 60%,#ff196f 160%);color:#250018;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#ff0b6d #00bfce}.sidebar::-webkit-scrollbar{width:7px}.sidebar::-webkit-scrollbar-track{background:#00bfce}.sidebar::-webkit-scrollbar-thumb{background:#ff0b6d;border-radius:9px}.sidebar nav{flex:none}.sidebar-foot{padding-bottom:8px}
 .brand,.profile{color:#250018}.brand-mark{border-color:#250018}.nav-item{color:#250018}.nav-item:hover,.nav-item.active{background:#ff196f;color:#fff}.sidebar-foot{color:#250018}.streak{border-color:#65e6eb}.streak small,.profile small{color:#5d183e}.flame{color:#ff8500}.profile>span{background:#91e900;color:#250018}
 .topbar{border-color:#a7edf1}.date,.scripture,.readiness small{color:#67405a}.date i{background:#ff196f}.bell,.menu{color:#250018}.bell span{background:#ff8500}
 .eyebrow{color:#db0057}.readiness circle{stroke:#c9f4f6}.readiness .meter{stroke:#ff0b6d}
