@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="charts.css" />
     <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="flows.css" />
   </head>
   <body>
     <div class="shell">
@@ -46,6 +47,12 @@
             <svg viewBox="0 0 120 120" role="img"><circle cx="60" cy="60" r="52"/><circle class="meter" cx="60" cy="60" r="52"/></svg>
             <div><strong>61<span>%</span></strong><small>READINESS</small></div>
           </div>
+        </section>
+
+        <section class="quick-actions" aria-label="BARNS actions">
+          <button data-open="checkinDialog"><span>✓</span><div><b>Daily Barn Check-in</b><small>3–5 minute capacity assessment</small></div><i>Begin →</i></button>
+          <button data-open="gapDialog"><span>↗</span><div><b>Measure Capacity Gap</b><small>Connect expectation to preparation</small></div><i>Measure →</i></button>
+          <button class="new-barn-action" data-open="barnDialog"><span>＋</span><div><b>Open New Barn</b><small>Create capacity for what is next</small></div><i>Open →</i></button>
         </section>
 
         <section class="diagnosis" id="insight">
@@ -118,8 +125,45 @@
       </main>
     </div>
 
+    <dialog id="checkinDialog" class="flow-dialog">
+      <form method="dialog" id="checkinForm">
+        <div class="dialog-head"><div><p class="eyebrow">DAILY BARN CHECK-IN</p><h2>Examine today’s capacity.</h2><p>Four Barns rotate into focus each day.</p></div><button class="close-dialog" value="cancel" aria-label="Close">×</button></div>
+        <div class="progress-track"><i id="checkinProgress"></i></div>
+        <div class="checkin-sections">
+          <fieldset><legend><span>✦</span><div>Spirit<small>Presence & obedience</small></div></legend><label>Did I consciously spend time with God today?<select name="spirit_presence"><option value="">Choose</option><option value="2">Yes, intentionally</option><option value="1">Briefly</option><option value="0">Not today</option></select></label><label>Did I obey something I already knew I should do?<select name="spirit_obedience"><option value="">Choose</option><option value="2">Yes</option><option value="1">I am still responding</option><option value="0">No</option></select></label><label>Was I operating from peace or anxiety?<input name="spirit_state" placeholder="What was driving you?" /></label></fieldset>
+          <fieldset><legend><span>◉</span><div>Mind<small>Thoughts & beliefs</small></div></legend><label>What thought dominated me today?<input name="mind_thought" placeholder="Name the thought honestly" /></label><label>Did fear influence a decision?<select name="mind_fear"><option value="">Choose</option><option value="2">No</option><option value="1">A little</option><option value="0">Yes</option></select></label><label>Did I think from scarcity or possibility?<select name="mind_posture"><option value="">Choose</option><option value="2">Possibility</option><option value="1">A mixture</option><option value="0">Scarcity</option></select></label></fieldset>
+          <fieldset><legend><span>◇</span><div>Character<small>Integrity & motives</small></div></legend><label>Was I completely honest today?<select name="character_honesty"><option value="">Choose</option><option value="2">Yes</option><option value="1">Mostly</option><option value="0">No</option></select></label><label>Did I keep my word?<select name="character_word"><option value="">Choose</option><option value="2">Yes</option><option value="1">Partly</option><option value="0">No</option></select></label><label>Where did pride or recognition-seeking show up?<input name="character_pride" placeholder="A moment, motive, or pattern" /></label></fieldset>
+          <fieldset><legend><span>✓</span><div>Discipline<small>Promises & follow-through</small></div></legend><label>Did I do what I said I would do?<select name="discipline_follow"><option value="">Choose</option><option value="2">Yes</option><option value="1">Some of it</option><option value="0">No</option></select></label><label>What did I procrastinate on?<input name="discipline_delay" placeholder="Name the avoided responsibility" /></label><label>Did comfort win over responsibility anywhere?<select name="discipline_comfort"><option value="">Choose</option><option value="2">No</option><option value="1">Once</option><option value="0">Repeatedly</option></select></label></fieldset>
+        </div>
+        <div class="dialog-foot"><span id="checkinAnswered">0 of 12 answered</span><button class="primary-action" id="completeCheckin" value="default">Complete check-in</button></div>
+      </form>
+    </dialog>
+
+    <dialog id="gapDialog" class="flow-dialog compact-dialog">
+      <form method="dialog" id="gapForm">
+        <div class="dialog-head"><div><p class="eyebrow">THE CAPACITY GAP</p><h2>What are you expecting?</h2><p>Make the promise measurable. Make the preparation practical.</p></div><button class="close-dialog" value="cancel" aria-label="Close">×</button></div>
+        <label class="large-label">Describe the responsibility or opportunity you are preparing for<textarea id="expectation" placeholder="I believe I am entering a season of increased leadership and influence."></textarea></label>
+        <div class="large-label">What will it require?<div class="requirement-grid" id="requirements"><button type="button">Leadership</button><button type="button">Discipline</button><button type="button">Financial stewardship</button><button type="button">Communication</button><button type="button">Emotional resilience</button><button type="button">Spiritual maturity</button><button type="button">Systems</button><button type="button">Team management</button></div></div>
+        <div class="slider-pair"><label>Expected responsibility <b id="expectedValue">87</b><input id="expectedRange" type="range" min="1" max="100" value="87"></label><label>Current capacity <b id="currentValue">53</b><input id="currentRange" type="range" min="1" max="100" value="53"></label></div>
+        <button type="button" class="primary-action full-action" id="calculateGap">Reveal my capacity gap</button>
+        <section class="gap-result" id="gapResult" hidden><div><small>PROMISE CAPACITY GAP</small><strong id="gapNumber">34</strong><span>points to prepare</span></div><div><h3>Your greatest vulnerabilities</h3><ul id="vulnerabilityList"></ul></div></section>
+      </form>
+    </dialog>
+
+    <dialog id="barnDialog" class="flow-dialog compact-dialog">
+      <form method="dialog" id="barnForm">
+        <div class="dialog-head"><div><p class="eyebrow">OPEN A NEW BARN</p><h2>Create capacity for what is next.</h2><p>Name the container, the reason, and the rhythms that will enlarge it.</p></div><button class="close-dialog" value="cancel" aria-label="Close">×</button></div>
+        <label class="large-label">What new capacity do you need to create?<select id="barnType" required><option value="">Select a new Barn</option><option>Public speaking</option><option>Marriage</option><option>Parenthood</option><option>Business</option><option>Wealth</option><option>Leadership</option><option>Ministry</option><option>Team building</option><option>International expansion</option><option>Scholarship</option><option>Education</option><option>Health</option><option>Emotional maturity</option></select></label>
+        <label class="large-label">Why are you opening this Barn?<textarea id="barnWhy" placeholder="I believe I will increasingly be responsible for..."></textarea></label>
+        <div class="slider-pair"><label>Current capacity <b id="barnCurrentValue">4/10</b><input id="barnCurrent" type="range" min="1" max="10" value="4"></label><label>Desired capacity <b id="barnDesiredValue">9/10</b><input id="barnDesired" type="range" min="1" max="10" value="9"></label></div>
+        <div class="large-label">Target behaviors<div class="behavior-list" id="behaviorList"><label><input type="checkbox" checked><span>Read or study this capacity for 20 minutes daily.</span></label><label><input type="checkbox" checked><span>Take one uncomfortable action each week.</span></label><label><input type="checkbox" checked><span>Ask for feedback and document what you learn.</span></label></div></div>
+        <button type="button" class="primary-action full-action" id="createBarn">Open this Barn</button>
+      </form>
+    </dialog>
+
     <div class="toast" role="status" aria-live="polite">Your focus has been set: protect 60 minutes for the work that carries your mission.</div>
     <script src="app.js"></script>
+    <script src="flows.js"></script>
   </body>
 </html>
 
