@@ -4,11 +4,15 @@ BARNS is a daily personal enlargement and stewardship system. It helps a person 
 
 The Barnyard dashboard tracks 13 areas of capacity, identifies the smallest Barn, detects mismatches between vision and supporting systems, and turns each insight into a focused daily act of enlargement.
 
+Standalone systems include the Daily Barn Check-In, Capacity Gap, Open and Put More Barns, Barn Inventory, Eat the Word, Belief Detox, Strongholds, Stretch Zone, Weight Test, Capacity Floor and Ceiling, Prune to Grow, My Promises, Ebenezers, Barn Journal, Come Up Hither, and Barn Blueprints.
+
 ## Run locally
 
 Serve the `out` directory with any static web server, then open `index.html` in a browser.
 
-## Production
+## Deployment
 
-[Open the private BARNS app](https://barns-capacity.ayeniayomide5.chatgpt.site)
+Vercel builds with `npm run build` and publishes the static `out` directory.
 
+- [Vercel production](https://barns-iota.vercel.app)
+- [BARNS on ChatGPT Sites](https://barns-capacity.ayeniayomide5.chatgpt.site)
