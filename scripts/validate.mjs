@@ -1,7 +1,9 @@
 import { readFileSync, statSync } from "node:fs";
 
 const files = ["out/index.html", "out/check-in.html", "out/capacity-gap.html", "out/open-barn.html", "out/put-barn.html", "out/barn-inventory.html", "out/eat-the-word.html", "out/belief-detox.html", "out/strongholds.html", "out/stretch-zone.html", "out/weight-test.html", "out/capacity-floor.html", "out/capacity-ceiling.html", "out/prune-to-grow.html", "out/promises.html", "out/ebenezers.html", "out/barn-journal.html", "out/come-up-hither.html", "out/barn-blueprints.html", "out/seasons.html", "out/enlargement-cycle.html", "out/weekly-review.html", "out/monthly-report.html", "out/styles.css", "out/charts.css", "out/theme.css", "out/feature-pages.css", "out/modules.css", "out/growth-systems.css", "out/capacity-limits.css", "out/legacy-systems.css", "out/reflection-systems.css", "out/cycle-systems.css", "out/barn-operating-system.css", "out/app.js", "out/feature-pages.js", "out/modules.js", "out/growth-systems.js", "out/capacity-limits.js", "out/legacy-systems.js", "out/reflection-systems.js", "out/cycle-systems.js", "out/barn-operating-system.js", "vercel.json"];
-files.push("out/app.html", "out/landing.css", "out/landing.js");
+files.push("out/app.html", "out/landing.css", "out/landing-v2.css", "out/landing.js", "out/citrus6-theme.css", "out/barn-paths.js", "out/barn-paths.css");
+files.push("out/my-barns.html", "out/my-barns.css", "out/my-barns.js");
+files.push("out/sub-barn-build.html", "out/sub-barn-build.css", "out/sub-barn-build.js");
 for (const file of files) {
   if (!statSync(file).isFile()) throw new Error(`Missing ${file}`);
 }
