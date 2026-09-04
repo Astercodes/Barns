@@ -11,4 +11,3 @@ if (!html.includes("Make room") || !html.includes("landing.js") || !app.includes
   throw new Error("BARNS public landing or app shell is incomplete");
 }
 console.log("BARNS production build validated.");
-
